@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grey Hat — La Guerre de l'Invisible</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./styleblack.css" />
+    <script type="module" src="./script.js"></script>
+  </head>
+  <body class="detail-page grey-page">
+    <header class="site-header">
+      <a class="brand" href="./"><svg viewBox="0 0 32 32"><path d="M16 2 28 9v14l-12 7L4 23V9l12-7Z"/><path d="m10 13 3 3-3 3M16 20h6"/></svg><span>INVISIBLES<span class="brand-dot">.</span></span></a>
+      <button class="menu-toggle" type="button" aria-label="Ouvrir le menu"><span></span><span></span></button>
+      <nav class="main-nav"><a href="./">Accueil</a><a href="./carte.html">Carte des attaques</a><a href="./quiz.html">Quiz</a>
+            <a href="./admin.html">Admin</a></nav>
+      <span class="header-note">Projet de sensibilisation</span>
+    </header>
+    
+    <main>
+      <div class="hat-container">
+        <section class="hat-hero">
+          <a class="back-link" href="./">↩ Retour à l'exploration</a>
+          
+          <div class="hat-title-section">
+            <span class="hat-eyebrow">03 — Explorer</span>
+            <h1 class="hat-title">Grey Hat</h1>
+            <p class="hat-definition">
+              <strong>Définition :</strong> Un Grey Hat évolue dans une zone intermédiaire : il explore des systèmes sans autorisation pour en révéler les failles, parfois dans l'intérêt public, mais sans chercher à nuire. Il enfreint donc la loi, ce qui rend son comportement difficile à classer.
+            </p>
+          </div>
+          
+          <div class="hat-logo">
+            <div class="logo-circle">
+              <img src="./GreyHat.png" alt="Grey Hat - Chapeau gris symbolisant les hackeurs en zone grise" />
+            </div>
+            <span class="logo-caption"></span>
+          </div>
+        </section>
+        
+        <div class="hat-divider"></div>
+        
+        <section class="hat-columns">
+          <div class="hat-column">
+            <article class="column-section">
+              <h2 class="column-section-title">Stéréotype</h2>
+              <p>
+                Le franc-tireur curieux, qui se pense plus malin que les règles et affirme agir « pour le bien de tous ». Cette image flatte souvent le grey hat lui-même : la bonne intention ne rend pas l'acte légal, et c'est ce qui rend ce profil délicat.
+              </p>
+            </article>
+            
+            <article class="column-section">
+              <h2 class="column-section-title">Salaire</h2>
+              <p>
+                Pas de salaire en tant que tel. Selon les cas :
+              </p>
+              <ul>
+                <li>parfois une prime (bug bounty) si l'entreprise accepte son signalement,</li>
+                <li>parfois une embauche après coup,</li>
+                <li>parfois… des poursuites judiciaires.</li>
+              </ul>
+            </article>
+            
+            <article class="column-section">
+              <h2 class="column-section-title">Motivation</h2>
+              <p>
+                La curiosité, le défi, la reconnaissance, le sentiment de rendre service. Personne ne lui a demandé d'agir : il s'est lui-même chargé de tester, puis informe (ou pas) le propriétaire du système.
+              </p>
+            </article>
+          </div>
+          
+          <div class="hat-column">
+            <article class="column-section">
+              <h2 class="column-section-title">Légalité</h2>
+              <p>
+                Techniquement, entrer dans un système sans autorisation reste illégal, même sans intention de nuire. La « zone grise » vient de l'intention, pas de la loi. Des mesures de protection existent toutefois : en France, depuis la loi pour une République numérique (2016), une personne qui signale de bonne foi une faille à l'ANSSI est protégée dans ce cadre. Plusieurs entreprises ont aussi publié des politiques de « divulgation responsable » (safe harbor) qui limitent le risque de poursuites.
+              </p>
+            </article>
+            
+            <article class="column-section">
+              <h2 class="column-section-title">Méthode et outils typiques</h2>
+              <ul>
+                <li><strong>Mêmes outils que le white hat</strong> (scanners, analyse de sites web, etc.), mais sans mandat.</li>
+                <li><strong>Divulgation de la faille :</strong> privée (au propriétaire), responsable (avec délai laissé pour corriger) ou publique (publication immédiate, plus risquée et controversée).</li>
+                <li><strong>Recherche passive :</strong> examen d'informations accessibles publiquement (OSINT, renseignement en sources ouvertes) pour repérer des services mal configurés.</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+        
+        <div class="hat-divider"></div>
+        
+        <section class="hat-example">
+          <h2 class="hat-example-title">Exemple concret</h2>
+          <p>
+            <strong>Poly Network (août 2021) :</strong> un pirate a exploité une faille dans cette plateforme de finance décentralisée et dérobé environ 600 millions de dollars en cryptomonnaies. Il a ensuite restitué la quasi-totalité des fonds en affirmant vouloir « alerter » sur la faille, sous le pseudonyme « Mr. White Hat ». Les avis restent partagés : lanceur d'alerte ou voleur repenti ? C'est exactement le propre de la zone grise.
+          </p>
+        </section>
+      </div>
+    </main>
+    
+    <footer class="site-footer">
+      <div class="footer-brand">
+        <strong>LA GUERRE DE L'INVISIBLE</strong>
+        <span>Comprendre pour mieux se protéger.</span>
+      </div>
+      <nav>
+        <a href="./">Accueil</a>
+        <a href="./carte.html">Carte des attaques</a>
+        <a href="./quiz.html">Quiz</a>
+            <a href="./admin.html">Admin</a>
+      </nav>
+      <p>Site pédagogique consacré à la culture et à la sécurité numériques.</p>
+    </footer>
+    
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>

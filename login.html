@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Connexion Admin - INVISIBLES</title>
+    <style>
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: #1a1a2e;
+            color: white;
+            margin: 0;
+            padding: 20px;
+        }
+        .login-container {
+            background: #16213e;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+        .login-container h1 {
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+        .login-container p {
+            color: #aaa;
+            margin-bottom: 2rem;
+        }
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .login-form input {
+            padding: 12px 15px;
+            border: 1px solid #333;
+            border-radius: 5px;
+            background: #0f172a;
+            color: white;
+            font-size: 1rem;
+        }
+        .login-form input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        .login-form button {
+            padding: 12px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .login-form button:hover {
+            transform: translateY(-2px);
+        }
+        .error-message {
+            color: #f44336;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>🔒 Connexion Admin</h1>
+        <p>Veuillez entrer le mot de passe pour accéder à la page d'administration.</p>
+        
+        <form class="login-form" id="loginForm">
+            <input type="password" id="passwordInput" placeholder="Mot de passe" required>
+            <button type="submit">Se connecter</button>
+            <div id="errorMessage" class="error-message"></div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const password = document.getElementById('passwordInput').value;
+            const errorMessage = document.getElementById('errorMessage');
+            
+            if (password === 'PMZM1') {
+                // Mot de passe correct
+                sessionStorage.setItem('adminAuth', 'true');
+                window.location.href = 'admin.html';
+            } else {
+                // Mot de passe incorrect
+                errorMessage.textContent = 'Mot de passe incorrect. Veuillez réessayer.';
+                document.getElementById('passwordInput').value = '';
+                document.getElementById('passwordInput').focus();
+            }
+        });
+    </script>
+</body>
+</html>

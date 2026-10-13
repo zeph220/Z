@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>White Hat — La Guerre de l'Invisible</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./styleblack.css" />
+    <script type="module" src="./script.js"></script>
+  </head>
+  <body class="detail-page white-page">
+    <header class="site-header">
+      <a class="brand" href="./"><svg viewBox="0 0 32 32"><path d="M16 2 28 9v14l-12 7L4 23V9l12-7Z"/><path d="m10 13 3 3-3 3M16 20h6"/></svg><span>INVISIBLES<span class="brand-dot">.</span></span></a>
+      <button class="menu-toggle" type="button" aria-label="Ouvrir le menu"><span></span><span></span></button>
+      <nav class="main-nav"><a href="./">Accueil</a><a href="./carte.html">Carte des attaques</a><a href="./quiz.html">Quiz</a>
+            <a href="./admin.html">Admin</a></nav>
+      <span class="header-note">Projet de sensibilisation</span>
+    </header>
+    
+    <main>
+      <div class="hat-container">
+        <section class="hat-hero">
+          <a class="back-link" href="./">↩ Retour à l'exploration</a>
+          
+          <div class="hat-title-section">
+            <span class="hat-eyebrow">01 — Défendre</span>
+            <h1 class="hat-title">White Hat</h1>
+            <p class="hat-definition">
+              <strong>Définition :</strong> Un White Hat représente un professionnel de la sécurité agissant strictement dans la légalité avec l'accord des propriétaires des systèmes. Leur mission est de trouver les vulnérabilités pour qu'elles soient corrigées avant d'être exploitées.
+            </p>
+          </div>
+          
+          <div class="hat-logo">
+            <div class="logo-circle">
+              <img src="./WhiteHat.png" alt="White Hat - Chapeau blanc symbolisant les hackeurs éthiques" />
+            </div>
+            <span class="logo-caption"></span>
+          </div>
+        </section>
+        
+        <div class="hat-divider"></div>
+        <section class="hat-columns">
+          <div class="hat-column">
+            <article class="column-section">
+              <h2 class="column-section-title">Stéréotype</h2>
+              <p>
+                Le geek discret en sweat à capuche, passionné de CTF (Capture The Flag : des compétitions où l'on résout des défis de sécurité), qui parle en acronymes et boit trop de café. En réalité, beaucoup travaillent en costume dans des cabinets de conseil, et une bonne part du métier consiste à rédiger des rapports et à expliquer les risques à des non-techniciens.
+              </p>
+            </article>
+            
+            <article class="column-section">
+              <h2 class="column-section-title">Salaire</h2>
+              <p>
+                <strong>Échelle salariale :</strong>
+              </p>
+              <ul>
+                <li><strong>Pentesteur junior :</strong> environ 35 à 45 k€ brut/an</li>
+                <li><strong>Confirmé / senior :</strong> environ 50 à 80 k€</li>
+                <li><strong>RSSI :</strong> souvent 70 à 120 k€ et plus</li>
+                <li><strong>Chasseur de primes (bug bounty hunter) :</strong> très variable, de quelques centaines d'euros à plusieurs centaines de milliers d'euros par an pour une petite élite</li>
+              </ul>
+            </article>
+            
+            <article class="column-section">
+              <h2 class="column-section-title">Motivation</h2>
+              <p>
+                Protégér. Il agit sur mandat : une entreprise, une administration ou un éditeur de logiciel lui demande (ou l'autorise) de chercher des failles. S'y ajoutent la passion du défi technique et le sens de l'utilité.
+              </p>
+            </article>
+          </div>
+          
+          <div class="hat-column">
+            <article class="column-section">
+              <h2 class="column-section-title">Légalité</h2>
+              <p>
+                Tout repose sur l'autorisation écrite préalable et sur un périmètre défini (« vous pouvez tester ces serveurs, pas ceux-là »). Sans cette autorisation, la même action devient une infraction. En France, l'accès frauduleux à un système est puni par l'article 323-1 du Code pénal (jusqu'à 3 ans de prison et 100 000 € d'amende dans le cas simple).
+              </p>
+            </article>
+            
+            <article class="column-section">
+              <h2 class="column-section-title">Méthode et outils typiques</h2>
+              <ul>
+                <li><strong>Test d'intrusion (pentest) :</strong> simulation d'attaque autorisée pour évaluer la solidité d'un système.</li>
+                <li><strong>Scan de vulnérabilités :</strong> recherche automatisée de faiblesses connues (outils comme Nmap pour cartographier un réseau, Nessus pour détecter les failles).</li>
+                <li><strong>Analyse d'applications web :</strong> Burp Suite permet d'intercepter et d'examiner les échanges entre un navigateur et un site.</li>
+                <li><strong>Audit de code :</strong> relecture du code source pour repérer les erreurs exploitables.</li>
+                <li><strong>Bug bounty :</strong> programmes où les entreprises paient ceux qui signalent des failles (plateformes comme YesWeHack, HackerOne).</li>
+                <li><strong>Certifications courantes :</strong> OSCP, CEH, CISSP.</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+        
+        <div class="hat-divider"></div>
+
+        <section class="hat-example">
+          <h2 class="hat-example-title">Exemple concret</h2>
+          <p>
+            <strong>Google Project Zero :</strong> une équipe de chercheurs payés pour traquer des failles zero-day (failles inconnues de l'éditeur, donc sans correctif disponible), dans les produits de Google comme dans ceux des concurrents. Ils préviennent l'éditeur et publient leurs découvertes après un délai fixe (environ 90 jours) pour pousser à corriger vite.
+          </p>
+          <p>
+            <strong>Autre parcours emblématique :</strong> Kevin Mitnick, ancien hacker condamné dans les années 1990, devenu consultant en sécurité reconnu.
+          </p>
+        </section>
+      </div>
+    </main>
+    
+    <footer class="site-footer">
+      <div class="footer-brand">
+        <strong>LA GUERRE DE L'INVISIBLE</strong>
+        <span>Comprendre pour mieux se protéger.</span>
+      </div>
+      <nav>
+        <a href="./">Accueil</a>
+        <a href="./carte.html">Carte des attaques</a>
+        <a href="./quiz.html">Quiz</a>
+            <a href="./admin.html">Admin</a>
+      </nav>
+      <p>Site pédagogique consacré à la culture et à la sécurité numériques.</p>
+    </footer>
+    
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>

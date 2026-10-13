@@ -1,0 +1,174 @@
+/* Admin Style CSS */
+
+.admin-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    min-height: calc(100vh - 200px);
+}
+
+.admin-container h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.admin-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.stat-card h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
+}
+
+.stat-card p {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.chart-container {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.chart-container h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+#score-chart {
+    max-height: 400px;
+}
+
+.results-table {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.results-table h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+#results-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#results-table th,
+#results-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+#results-table th {
+    background-color: #667eea;
+    color: white;
+    font-weight: 600;
+}
+
+#results-table tr:hover {
+    background-color: #f5f5f5;
+}
+
+#results-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.btn-clear,
+.btn-export,
+.btn-delete {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-clear {
+    background-color: #f44336;
+    color: white;
+}
+
+.btn-clear:hover {
+    background-color: #d32f2f;
+}
+
+.btn-export {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.btn-export:hover {
+    background-color: #388e3c;
+}
+
+.btn-delete {
+    background-color: #ff9800;
+    color: white;
+    padding: 5px 10px;
+    font-size: 0.8rem;
+}
+
+.btn-delete:hover {
+    background-color: #e68a00;
+}
+
+@media (max-width: 768px) {
+    .admin-container {
+        padding: 1rem;
+    }
+    
+    .admin-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    #results-table {
+        font-size: 0.9rem;
+    }
+    
+    #results-table th,
+    #results-table td {
+        padding: 8px 10px;
+    }
+}

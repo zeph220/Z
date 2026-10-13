@@ -1,0 +1,300 @@
+<html lang="fr"><head>
+    <meta charset="utf-8">
+        <link rel="stylesheet" href="quiz-style.css">
+		<link rel="stylesheet" href="style.css">
+		<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-database-compat.js"></script>
+  </head>
+  <body>
+        <header class="site-header">
+          <a class="brand" href="./" aria-label="Invisibles, accueil">
+            <svg viewBox="0 0 32 32" aria-hidden="true">
+              <path d="M16 2 28 9v14l-12 7L4 23V9l12-7Z"></path>
+              <path d="m10 13 3 3-3 3M16 20h6"></path>
+            </svg>
+            <span>INVISIBLES<span class="brand-dot">.</span></span>
+          </a>
+          <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false">
+            <span></span><span></span>
+          </button>
+          <nav class="main-nav" aria-label="Navigation principale">
+            <a href="./">Accueil</a>
+            <a href="./carte.html">Carte des attaques</a>
+			<a class="active" href="./quiz.html">Quiz</a>
+            <a href="./admin.html">Admin</a>
+          </nav>
+          <span class="header-note">Projet de sensibilisation</span>
+        </header>
+        <div class="form">
+          <form>
+            <fieldset>
+              <legend>1. On vous donne un cadenas fermé. Votre premier réflexe ?</legend>
+                <label>
+                  <input type="radio" name="q1" value="1">
+                  A. Chercher la clé.
+                </label>
+                <label>
+                  <input type="radio" name="q1" value="2">
+                  B. Me demander ce qu'il y a à l'intérieur.
+                </label>
+                <label>
+                  <input type="radio" name="q1" value="0">
+                  C. Passer à autre chose.
+                </label>
+                <label>
+                  <input type="radio" name="q1" value="3">
+                  D. Examiner le mécanisme avant même de savoir à quoi sert la boîte.
+                </label>
+              <legend>2. Une porte est marquée « Ne pas ouvrir ».</legend>
+                <label>
+                  <input type="radio" name="q2" value="0">
+                  A. Cette consigne me semble raisonnable.
+                </label>
+                <label>
+                  <input type="radio" name="q2" value="1">
+                  B. Je prends une photo du panneau.
+                </label>
+                <label>
+                  <input type="radio" name="q2" value="2">
+                  C. Je veux surtout savoir qui l'a écrit.
+                </label>
+                <label>
+                  <input type="radio" name="q2" value="3">
+                  D. J'ai soudainement très envie de connaître la raison de l'interdiction.
+                </label>
+              <legend>3. Quand un objet tombe en panne :</legend>
+                <label>
+                  <input type="radio" name="q3" value="1">
+                  A. Je cherche le manuel.
+                </label>
+                <label>
+                  <input type="radio" name="q3" value="3">
+                  B. Je le démonte mentalement sans le toucher.
+                </label>
+                <label>
+                  <input type="radio" name="q3" value="2">
+                  C. Je me demande ce qui a cassé à l'intérieur.
+                </label>
+                <label>
+                  <input type="radio" name="q3" value="0">
+                  D. J'attends que quelqu'un de compétent s'en occupe.
+                </label>
+              <legend>4. Vous trouvez un puzzle déjà résolu.</legend>
+                <label>
+                  <input type="radio" name="q4" value="0">
+                  A. Je le range.
+                </label>
+                <label>
+                  <input type="radio" name="q4" value="1">
+                  B. Je le refais.
+                </label>
+                <label>
+                  <input type="radio" name="q4" value="2">
+                  C. J'essaie de comprendre comment le créateur l'a conçu.
+                </label>
+                <label>
+                  <input type="radio" name="q4" value="3">
+                  D. Je cherche s'il existe une façon de le résoudre encore plus vite.
+                </label>
+              <legend>5. Dans un labyrinthe, vous êtes plutôt :</legend>
+                <label>
+                  <input type="radio" name="q5" value="1">
+                  A. Celui qui suit les panneaux.
+                </label>
+                <label>
+                  <input type="radio" name="q5" value="2">
+                  B. Celui qui teste les impasses pour être sûr.
+                </label>
+                <label>
+                  <input type="radio" name="q5" value="0">
+                  C. Celui qui cherche un plan.
+                </label>
+                <label>
+                  <input type="radio" name="q5" value="3">
+                  D. Celui qui regarde si on peut passer par-dessus le mur.
+                </label><legend>6. On vous présente une machine mystérieuse qui fonctionne parfaitement.</legend>
+                <label>
+                  <input type="radio" name="q6" value="0">
+                  A. Tant mieux pour elle.
+                </label>
+                <label>
+                  <input type="radio" name="q6" value="1">
+                  B. J'appuie sur un bouton au hasard.
+                </label>
+                <label>
+                  <input type="radio" name="q6" value="2">
+                  C. Je veux comprendre pourquoi elle fonctionne.
+                </label>
+                <label>
+                  <input type="radio" name="q6" value="3">
+                  D. Je veux savoir dans quel cas elle ne fonctionnerait plus.
+                </label>
+              <legend>7. Quel compliment vous ressemble le plus ?</legend>
+                <label>
+                  <input type="radio" name="q7" value="1">
+                  A. « Toujours prudent. »
+                </label>
+                <label>
+                  <input type="radio" name="q7" value="2">
+                  B. « Toujours curieux. »
+                </label>
+                <label>
+                  <input type="radio" name="q7" value="0">
+                  C. « Toujours méthodique. »
+                </label>
+                <label>
+                  <input type="radio" name="q7" value="3">
+                  D. « Toujours en train de tester les limites. »
+                </label><legend>8. Une énigme paraît impossible à résoudre.</legend>
+                <label>
+                  <input type="radio" name="q8" value="0">
+                  A. Je passe à autre chose.
+                </label>
+                <label>
+                  <input type="radio" name="q8" value="1">
+                  B. Je demande un indice.
+                </label>
+                <label>
+                  <input type="radio" name="q8" value="2">
+                  C. Je cherche un angle inattendu.
+                </label>
+                <label>
+                  <input type="radio" name="q8" value="3">
+                  D. Je soupçonne que les règles sont incomplètes.
+                </label>
+              <legend>9. Vous entrez dans une pièce remplie de boutons anonymes.</legend>
+                <label>
+                  <input type="radio" name="q9" value="1">
+                  A. Je n'en touche aucun.
+                </label>
+                <label>
+                  <input type="radio" name="q9" value="0">
+                  B. J'en essaie un.
+                </label>
+                <label>
+                  <input type="radio" name="q9" value="2">
+                  C. J'observe les branchements avant.
+                </label>
+                <label>
+                  <input type="radio" name="q9" value="3">
+                  D. J'imagine déjà les conséquences d'une combinaison improbable.
+                </label><legend>10. Si votre cerveau était un logiciel, quelle serait sa mise à jour principale ?</legend>
+                <label>
+                  <input type="radio" name="q10" value="0">
+                  A. Stabilité renforcée.
+                </label>
+                <label>
+                  <input type="radio" name="q10" value="1">
+                  B. Documentation améliorée.
+                </label>
+                <label>
+                  <input type="radio" name="q10" value="2">
+                  C. Analyse approfondie des comportements inattendus.
+                </label>
+                <label>
+                  <input type="radio" name="q10" value="3">
+                  D. Détection automatique des raccourcis non prévus.
+                </label>
+        </fieldset></form></div>
+        <br>
+	<div class="actions">
+		<button class="valider" type="button" onclick="calculerScore()">
+		Valider
+		</button>
+		<button class="reset" type="reset" onclick="reinitialiserResultat()">
+		Réinitialiser
+		</button>
+        </div>
+    
+
+
+<div id="resultat"></div>
+
+          <script>
+
+            function calculerScore() {
+
+              let score = 0;
+              let toutesLesQuestions = true;
+
+              for (let i = 1; i <= 10; i++) {
+
+                const reponse = document.querySelector(
+                  'input[name="q' + i + '"]:checked'
+                );
+
+                if (reponse) {
+                  score += Number(reponse.value);
+                } else {
+                  toutesLesQuestions = false;
+                }
+              }
+
+              if (!toutesLesQuestions) {
+
+                document.getElementById("resultat").textContent =
+                  "Veuillez répondre à toutes les questions.";
+
+                return;
+              }
+
+              let message = "";
+
+              if (score <= 7) {
+                message = "Vous n'êtes pas dangereux (heureusement pour les autres).";
+              }
+              else if (score <= 15) {
+                message = "Vous présentez un niveau de danger numérique plutôt faible.";
+              }
+              else if (score <= 22) {
+                message = "Votre curiosité numérique commence à devenir suspecte.";
+              }
+              else {
+                message = "Votre adresse IP a été transmise aux services secrets";
+              }
+
+              document.getElementById("resultat").innerHTML =
+                "<h2>Score : " + score + " / 30</h2>" +
+                "<p>" + message + "</p>";
+              
+              // Sauvegarder le résultat dans localStorage
+              saveResult(score);
+            }
+
+
+            function reinitialiserResultat() {
+
+              document.getElementById("resultat").innerHTML = "";
+
+            }
+
+            // Configuration Firebase
+            const firebaseConfig = {
+              apiKey: "AIzaSyDhfcjt89khZjia9cZ9kVd5lOmFhUCBABY",
+              authDomain: "sitepmzm-quiz.firebaseapp.com",
+              databaseURL: "https://sitepmzm-quiz-default-rtdb.firebaseio.com",
+              projectId: "sitepmzm-quiz",
+              storageBucket: "sitepmzm-quiz.firebasestorage.app",
+              messagingSenderId: "983570150537",
+              appId: "1:983570150537:web:03251c16e13d0514540258"
+            };
+
+            // Initialiser Firebase
+            if (!firebase.apps.length) {
+              firebase.initializeApp(firebaseConfig);
+            }
+            const database = firebase.database();
+
+            function saveResult(score) {
+              const resultsRef = database.ref('quizResults');
+              resultsRef.push({
+                score: score,
+                timestamp: new Date().toISOString()
+              });
+            }
+
+          </script>
+	
+  
+
+</body></html>

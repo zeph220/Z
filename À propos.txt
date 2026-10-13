@@ -1,0 +1,22 @@
+L'équipe
+
+La guerre de l’invisible est née de l’envie commune de chercher ce qui se cache derrière le terme très général de « hackeur » et du « hacking ». Cela nous a d’autant plus plu que notre site internet est avant tout un projet de NSI, donc d’informatique, et relier ce projet à la figure presque mystique du « hackeur » invisible, inattaquable et surpuissant dans le cyberespace nous semblait donc un excellent choix.
+
+Nous sommes quatre personnes, et nous avons tous des compétences complémentaires :
+
+* Paul Mignot 
+  o	Designer
+  o	Il est chargé d’imaginer la conception graphique des pages, de rechercher des informations sur les autres sites web et de rédiger les contenus des pages.
+* Maxime Carrard 
+  o	Développeur
+  o	Il est chargé du développement du site internet dans sa globalité, en utilisant habilement les langages HTML, CSS et JS (sur lequel il s’est renseigné préalablement). L’équipe lui doit un grand merci.
+* Zéphyr Frotier de Bagneux 
+  o	Intégrateur web
+  o	Il est chargé du développement de l’onglet « Carte des Attaques » avec l’embed de cette page, ainsi que de l’onglet « Quiz ».
+* Matthieu Menguy
+  o	Team Builder et design helper
+  o	Il est chargé de l’organisation du groupe, et aide Paul pour le design du début a la fin.
+
+* Claude d’Anthropic, qui nous a aidé à rédiger le contenu des pages du site, et uniquement le contenu bien sûr (pas le code), après avoir reçu des instructions claires sur les informations à mettre, le style adapté et les sources sur lequelles se baser. Son travail a systématiquement été relu attentivement et vérifié.
+
+* ChatGPT d’OpenAI, qui nous a aidé à créer les petites illustrations que l’on retrouve partout sur le site, après avoir reçu des instructions claires sur ce que l’on souhaitait avoir.

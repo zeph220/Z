@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta name="google-site-verification" content="OvS22Xg2eVFyNjwm1e2zpDnleXQaVUkfz6dM1xjE86M" />
+    <meta name="hackeurs"/>
+    <meta name="description"
+          content="INVISIBLES est un projet pédagogique consacré à la cybersécurité et à la compréhension du hacking. Découvrez les différences entre les hackers white hat, grey hat et black hat, les cyberattaques, les enjeux de la sécurité informatique et les moyens de mieux protéger les systèmes numériques.">
+    <meta name="keywords" content="white hat, black hat, hackeur, invisible, nsi">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="La Guerre de l'invisible : comprendre les différents visages du hacking et de la cybersécurité."/>
+    <title>Cybersécurité et hacking : comprendre les hackers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="./style.css" />
+    <script type="module" src="./script.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="./" aria-label="Invisibles, accueil">
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M16 2 28 9v14l-12 7L4 23V9l12-7Z" />
+          <path d="m10 13 3 3-3 3M16 20h6" />
+        </svg>
+        <span>INVISIBLES<span class="brand-dot">.</span></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+      <nav class="main-nav" aria-label="Navigation principale">
+        <a class="active" href="./">Accueil</a>
+        <a href="./carte.html">Carte des attaques</a>
+        <a href="./quiz.html">Quiz</a>
+      </nav>
+      <span class="header-note">Projet de sensibilisation</span>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-grid"></div>
+        <div class="hero-copy">
+          <p class="eyebrow"><span></span> La guerre de l'invisible</p>
+          <h1>L'armée de<br /><em>l'ombre.</em></h1>
+          <p class="hero-intro">
+            Le hacking n'est pas une couleur. C'est une intention, un contexte,
+            une frontière en mouvement.
+          </p>
+        </div>
+        <div class="code-mark" aria-hidden="true">&lt;/&gt;</div>
+        <a class="scroll-link" href="#profils">Explorer <span>↓</span></a>
+      </section>
+
+      <section class="profiles" id="profils">
+        <div class="section-heading">
+          <div>
+            <span class="section-index">/ 01</span>
+            <h2>Trois nuances.<br />Trois intentions.</h2>
+          </div>
+          <p>
+            Dans la cybersécurité, la couleur du chapeau révèle le rapport à la
+            loi, au consentement et à la responsabilité.
+          </p>
+        </div>
+
+        <div class="carousel" aria-label="Profils de hackers">
+          <div class="cards-track">
+            <a class="hat-card active" href="./white-hat.html" data-card>
+              <span class="card-number">01 — Défendre</span>
+              <div class="hat-visual">
+                <svg viewBox="0 0 160 160" aria-hidden="true">
+                  <path d="M80 17 132 37v39c0 33-20 56-52 69-32-13-52-36-52-69V37L80 17Z" />
+                  <path d="m57 79 15 15 33-36" />
+                </svg>
+              </div>
+              <span class="card-label">White Hat</span>
+              <h3>Les gardiens du code</h3>
+              <p>Professionnel de sécurité, agissant dans la légalité pour trouver les vulnérabilités et les corriger.</p>
+              <span class="card-link">Découvrir le profil <b>→</b></span>
+            </a>
+
+            <a class="hat-card black" href="./black-hat.html" data-card>
+              <span class="card-number">02 — Attaquer</span>
+              <div class="hat-visual">
+                <svg viewBox="0 0 160 160" aria-hidden="true">
+                  <path d="M42 67c3-28 15-44 38-48 23 4 35 20 38 48" />
+                  <path d="M24 69h112l-14 22H38L24 69Z" />
+                  <path d="M47 98c7 25 59 25 66 0M51 102c17-10 41-10 58 0M58 95v13M102 95v13" />
+                </svg>
+              </div>
+              <span class="card-label">Black Hat</span>
+              <h3>Force du chaos</h3>
+              <p>Cybercriminel agissant par malveillance pure pour un profit personnel illégal.</p>
+              <span class="card-link">Découvrir le profil <b>→</b></span>
+            </a>
+
+            <a class="hat-card grey" href="./grey-hat.html" data-card>
+              <span class="card-number">03 — Explorer</span>
+              <div class="hat-visual">
+                <svg viewBox="0 0 160 160" aria-hidden="true">
+                  <path d="M46 28H29v17M114 28h17v17M46 132H29v-17M114 132h17v-17" />
+                  <circle cx="80" cy="80" r="34" />
+                  <path d="M48 80h64M80 48c11 10 17 21 17 32s-6 22-17 32c-11-10-17-21-17-32s6-22 17-32Z" />
+                </svg>
+              </div>
+              <span class="card-label">Grey Hat</span>
+              <h3>Éclaireur de l’ombre</h3>
+              <p>Hackeur évoluant dans l’illégalité pour trouver des failles sans toutefois chercher à nuire.</p>
+              <span class="card-link">Découvrir le profil <b>→</b></span>
+            </a>
+            
+            <a class="hat-card red" href="./red-hat.html" data-card>
+              <span class="card-number">04 — Contre-attaquer</span>
+              <div class="hat-visual">
+                <svg viewBox="0 0 160 160" aria-hidden="true">
+                  <path d="M80 17 128 35v38c0 31-19 53-48 68C51 126 32 104 32 73V35L80 17Z" />
+                  <path d="m88 39-29 43h20l-7 39 29-49H81l7-33Z" />
+                </svg>
+              </div>
+              <span class="card-label">Red Hat</span>
+              <h3>Justicier du réseau</h3>
+              <p>Professionnel de la cybersécurité agissant souvent illégalement pour attaquer les cybercriminels.</p>
+              <span class="card-link">Découvrir le profil <b>→</b></span>
+            </a>
+          </div>
+        </div>
+
+        <div class="carousel-controls">
+          <button type="button" data-previous aria-label="Profil précédent">←</button>
+          <div class="dots" aria-label="Choisir un profil">
+            <button class="active" type="button" data-dot="0" aria-label="White Hat"></button>
+            <button type="button" data-dot="1" aria-label="Grey Hat"></button>
+            <button type="button" data-dot="2" aria-label="Black Hat"></button>
+            <button type="button" data-dot="2" aria-label="Red Hat"></button>
+          </div>
+          <span class="carousel-count">01 / 04</span>
+          <button type="button" data-next aria-label="Profil suivant">→</button>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-brand">
+        <strong>LA GUERRE DE L'INVISIBLE</strong>
+        <span>Comprendre pour mieux se protéger.</span>
+      </div>
+      <nav>
+        <a href="./">Accueil</a>
+        <a href="./carte.html">Carte des attaques</a>
+        <a href="./login.html">Admin</a>
+      </nav>
+      <p>Site pédagogique consacré à la culture et à la sécurité numériques.</p>
+    </footer>
+  </body>
+</html>

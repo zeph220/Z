@@ -1,0 +1,47 @@
+{
+  "rules": {
+    "usernames": {
+      ".read": "auth != null && (auth.token.email == 'zeph220@auth.invisibles.local' || root.child('adminRoles').child(auth.uid).child('role').val() == 'superadmin')",
+      "$username": {
+        ".write": "auth != null && ((newData.exists() && !data.exists() && newData.val() == auth.uid) || (!newData.exists() && data.val() == auth.uid))",
+        ".validate": "newData.isString()"
+      }
+    },
+    "profiles": {
+      "$uid": {
+        ".read": "auth != null && (auth.uid == $uid || auth.token.email == 'zeph220@auth.invisibles.local' || root.child('adminRoles').child(auth.uid).child('role').val() == 'superadmin')",
+        ".write": "auth != null && auth.uid == $uid && ((!data.exists() && root.child('usernames').child(newData.child('username').val()).val() == auth.uid) || (data.exists() && newData.child('username').val() == data.child('username').val()))",
+        ".validate": "newData.hasChildren(['username']) && newData.child('username').isString() && newData.child('username').val().matches(/^[a-z0-9][a-z0-9._-]{2,31}$/)"
+      }
+    },
+    "accessRequests": {
+      "$uid": {
+        ".read": "auth != null && (auth.uid == $uid || auth.token.email == 'zeph220@auth.invisibles.local' || root.child('adminRoles').child(auth.uid).child('role').val() == 'superadmin')",
+        ".write": "auth != null && (((auth.uid == $uid) && newData.child('username').val() == root.child('profiles').child(auth.uid).child('username').val() && newData.child('status').val() == 'pending' && (!data.exists() || data.child('status').val() == 'rejected')) || ((auth.token.email == 'zeph220@auth.invisibles.local' || root.child('adminRoles').child(auth.uid).child('role').val() == 'superadmin') && data.exists() && newData.child('username').val() == data.child('username').val() && (newData.child('status').val() == 'approved' || newData.child('status').val() == 'rejected') && newData.child('reviewedBy').val() == auth.uid))",
+        ".validate": "newData.hasChildren(['username', 'status']) && newData.child('username').isString() && (newData.child('status').val() == 'pending' || newData.child('status').val() == 'approved' || newData.child('status').val() == 'rejected')"
+      }
+    },
+    "adminRoles": {
+      "$uid": {
+        ".read": "auth != null && (auth.uid == $uid || auth.token.email == 'zeph220@auth.invisibles.local' || root.child('adminRoles').child(auth.uid).child('role').val() == 'superadmin')",
+        ".write": "auth != null && ((auth.token.email == 'zeph220@auth.invisibles.local') || (root.child('adminRoles').child(auth.uid).child('role').val() == 'superadmin' && newData.child('role').val() == 'admin' && (!data.exists() || data.child('role').val() != 'superadmin'))) && newData.child('username').val() == root.child('profiles').child($uid).child('username').val()",
+        ".validate": "newData.hasChildren(['username', 'role']) && newData.child('username').isString() && (newData.child('role').val() == 'admin' || newData.child('role').val() == 'superadmin')"
+      }
+    },
+    "chatMessages": {
+      ".read": "auth != null && (auth.token.email == 'zeph220@auth.invisibles.local' || root.child('adminRoles').child(auth.uid).child('role').val() == 'admin' || root.child('adminRoles').child(auth.uid).child('role').val() == 'superadmin')",
+      "$messageId": {
+        ".write": "auth != null && !data.exists() && (auth.token.email == 'zeph220@auth.invisibles.local' || root.child('adminRoles').child(auth.uid).child('role').val() == 'admin' || root.child('adminRoles').child(auth.uid).child('role').val() == 'superadmin') && newData.child('authorUid').val() == auth.uid && newData.child('username').val() == root.child('profiles').child(auth.uid).child('username').val()",
+        ".validate": "newData.hasChildren(['authorUid', 'username', 'text', 'createdAt']) && newData.child('username').isString() && newData.child('text').isString() && newData.child('text').val().length > 0 && newData.child('text').val().length <= 1000 && newData.child('createdAt').isNumber()"
+      }
+    },
+    "quizResults": {
+      ".read": "auth != null && (auth.token.email == 'zeph220@auth.invisibles.local' || root.child('adminRoles').child(auth.uid).child('role').val() == 'admin' || root.child('adminRoles').child(auth.uid).child('role').val() == 'superadmin')",
+      ".write": "auth != null && (auth.token.email == 'zeph220@auth.invisibles.local' || root.child('adminRoles').child(auth.uid).child('role').val() == 'admin' || root.child('adminRoles').child(auth.uid).child('role').val() == 'superadmin') && newData.val() == null",
+      "$resultId": {
+        ".write": "(!data.exists() && newData.hasChildren(['score', 'timestamp'])) || (data.exists() && !newData.exists() && auth != null && (auth.token.email == 'zeph220@auth.invisibles.local' || root.child('adminRoles').child(auth.uid).child('role').val() == 'admin' || root.child('adminRoles').child(auth.uid).child('role').val() == 'superadmin'))",
+        ".validate": "newData.child('score').isNumber() && newData.child('score').val() >= 0 && newData.child('score').val() <= 30 && newData.child('timestamp').isString()"
+      }
+    }
+  }
+}
